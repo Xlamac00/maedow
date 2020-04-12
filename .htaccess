@@ -1,0 +1,4 @@
+Order Allow,Deny
+
+RewriteEngine On
+RewriteRule (.*) www/$1 [L]
