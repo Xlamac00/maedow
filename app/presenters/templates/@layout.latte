@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+
+		<title>{ifset title}{include title|stripHtml} | {/ifset}Maedow admin</title>
+		<link href="{$basePath}/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="{$basePath}/css/fontawesome.min.css" rel="stylesheet" media="screen">
+		<link href="{$basePath}/css/solid.min.css" rel="stylesheet" media="screen">
+		<script src="{$basePath}/js/jquery.min.js"></script>
+		<script src="{$basePath}/js/bootstrap.min.js"></script>
+		<link href="{$basePath}/css/maedow.css" rel="stylesheet" media="screen">
+	</head>
+
+	<body>
+
+		{include 'navbar.latte'}
+		<div class="wrapper">
+			{include 'menu.latte'}
+			<div id="content">
+				<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+				{include content}
+			</div>
+		</div>
+	</body>
+</html>
